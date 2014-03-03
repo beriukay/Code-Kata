@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Sun 02 Mar 2014 11:23:01 PM AKST
+ * Last Modified : Sun 02 Mar 2014 11:55:18 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -12,12 +12,11 @@ using std::string;
 string numeral(int num)
 {   
     string roman_num = "";
-    if(num==1)
-	roman_num = "I";
-    if(num==2)
-	roman_num = "II";
-    if(num==3)
-	roman_num = "III";
+    while(num>=1)
+    {
+	roman_num += "I";
+	num--;
+    }
     return roman_num;
 }
 
