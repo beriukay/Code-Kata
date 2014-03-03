@@ -1,16 +1,17 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Sun 02 Mar 2014 11:19:59 PM AKST
+ * Last Modified : Sun 02 Mar 2014 11:23:01 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
 #include <string>
+using std::string;
 #include "catch.hpp"
 
-std::string numeral(int num)
+string numeral(int num)
 {   
-    std::string roman_num = "";
+    string roman_num = "";
     if(num==1)
 	roman_num = "I";
     if(num==2)
