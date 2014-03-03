@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Sun 02 Mar 2014 10:56:57 PM AKST
+ * Last Modified : Sun 02 Mar 2014 11:19:59 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -10,12 +10,14 @@
 
 std::string numeral(int num)
 {   
+    std::string roman_num = "";
     if(num==1)
-	return "I";
+	roman_num = "I";
     if(num==2)
-	return "II";
+	roman_num = "II";
     if(num==3)
-	return "III";
+	roman_num = "III";
+    return roman_num;
 }
 
 TEST_CASE( "Roman numeral computation", "[numeral]" ) 
