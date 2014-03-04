@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 10:10:54 PM AKST
+ * Last Modified : Mon 03 Mar 2014 10:13:55 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -60,6 +60,7 @@ TEST_CASE( "Roman numeral computation", "[numeral]" )
     REQUIRE( numeral(27) == "XXVII" );
     REQUIRE( numeral(28) == "XXVIII" );
     REQUIRE( numeral(30) == "XXX" );
+    REQUIRE( numeral(34) == "XXXIV" );
     REQUIRE( numeral(38) == "XXXVIII" );
     REQUIRE( numeral(50) == "L" );
     REQUIRE( numeral(55) == "LV" );
