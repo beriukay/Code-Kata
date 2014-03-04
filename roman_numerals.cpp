@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 10:58:32 PM AKST
+ * Last Modified : Mon 03 Mar 2014 11:26:06 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -22,7 +22,7 @@ string numeral(int num)
 	    roman_num+=roman_values[value];
 	    num-=critical_values[value];
 	}
-	if (num == 40)
+	if (num >= 40 && num < 50)
 	{
 	    roman_num+="X";
 	    num+=10;
