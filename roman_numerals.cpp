@@ -1,19 +1,29 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 11:53:46 PM AKST
+ * Last Modified : Tue 04 Mar 2014 12:10:18 AM AKST
  */
 
 #define CATCH_CONFIG_MAIN
 #include <string>
 using std::string;
 #include <vector>
+using std::vector;
 #include "catch.hpp"
+
+
+int pow(int base, int digits)
+{
+    int total = 1;
+    for (int i=0; i<digits; ++i)
+	total *= base;
+    return total;
+}
 
 string numeral(int num)
 {   
-    std::vector<int> critical_values={1000,500,100,50,10,5,1};
-    std::vector<string> roman_values={"M", "D","C","L","X","V","I"};
+    vector<int> critical_values={1000,500,100,50,10,5,1};
+    vector<string> roman_values={"M", "D","C","L","X","V","I"};
     string roman_num="";
     for(int value=0; value < critical_values.size(); ++value)
     {
@@ -21,6 +31,12 @@ string numeral(int num)
 	{
 	    roman_num+=roman_values[value];
 	    num-=critical_values[value];
+	}
+
+	vector<string> border_roman={"I","X","C"};
+	for (int digit=2; digit>=0; --digit)
+	{
+
 	}
 	if (num >= 900 && num < 1000)
 	{
