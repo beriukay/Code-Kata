@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 04:48:16 PM AKST
+ * Last Modified : Mon 03 Mar 2014 04:52:26 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -17,11 +17,6 @@ string numeral(int num)
     string roman_num="";
     for(auto value=critical_values.back():critical_values)
     {
-	while(num>=value)
-	{
-	    roman_num+=roman_values.back();
-	    num-=value;
-	}
     }
     while(num>=10)
     {
