@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 10:25:38 PM AKST
+ * Last Modified : Mon 03 Mar 2014 10:26:36 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -17,6 +17,11 @@ string numeral(int num)
     string roman_num="";
     for(int value=0; value < critical_values.size(); ++value)
     {
+	if (num == 9)
+	{
+	    roman_num+="I";
+	    num+=1;
+	}
 	if (num == 4)
 	{
 	    roman_num+="I";
