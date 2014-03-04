@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 03:59:36 PM AKST
+ * Last Modified : Mon 03 Mar 2014 04:06:52 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -11,20 +11,21 @@ using std::string;
 
 string numeral(int num)
 {   
-    string roman_num = "";
+    int critical_values[]={1,5,10,50,100};
+    string roman_num="";
     while(num>=10)
     {
-	roman_num += "X";
+	roman_num+="X";
 	num-=10;
     }
     while(num>=5)
     {
-	roman_num += "V";
+	roman_num+="V";
 	num-=5;
     }
     while(num>=1)
     {
-	roman_num += "I";
+	roman_num+="I";
 	num--;
     }
     return roman_num;
