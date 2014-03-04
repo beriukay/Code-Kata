@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Tue 04 Mar 2014 12:37:53 AM AKST
+ * Last Modified : Tue 04 Mar 2014 12:39:00 AM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -38,12 +38,12 @@ string numeral(int num)
 	    int tens_place = pow(10, digit);
 	    if (num >= 9*tens_place && num < 10*tens_place)
 	    {
-		roman_num+="C";
+		roman_num+=border_roman[digit];
 		num+=tens_place;
 	    }
 	    if (num > 4*tens_place && num < 5*tens_place)
 	    {
-		roman_num+="C";
+		roman_num+=border_roman[digit];
 		num+=tens_place;
 	    }
 	}
