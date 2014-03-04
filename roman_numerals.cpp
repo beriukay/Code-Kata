@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Tue 04 Mar 2014 12:49:36 AM AKST
+ * Last Modified : Tue 04 Mar 2014 12:58:29 AM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -10,7 +10,6 @@ using std::string;
 #include <vector>
 using std::vector;
 #include "catch.hpp"
-#include <cmath>
 
 string numeral(int num)
 {   
@@ -26,19 +25,19 @@ string numeral(int num)
 	}
 
 	vector<string> border_roman={"I","X","C"};
-	for (int digit=2; digit>=1; --digit)
+	for (int tens=100; tens>=1; tens /= 10)
 	{
-	    int tens_place = std::pow(10, digit);
-	    if (num >= 9*tens_place && num < 10*tens_place)
+	    if (num >= 9*tens && num < 10*tens)
 	    {
-		roman_num+=border_roman[digit];
-		num+=tens_place;
+		roman_num+=border_roman.back();
+		num+=tens;
 	    }
-	    if (num > 4*tens_place && num < 5*tens_place)
+	    if (num > 4*tens && num < 5*tens)
 	    {
-		roman_num+=border_roman[digit];
-		num+=tens_place;
+		roman_num+=border_roman.back();
+		num+=tens;
 	    }
+	    border_roman.pop_back();
 	}
 	if (num >= 4*10 && num < 5*10)
 	{
@@ -55,6 +54,7 @@ string numeral(int num)
 	    roman_num+="I";
 	    num+=1;
 	}
+
 	while(num>=critical_values[value])
 	{
 	    roman_num+=roman_values[value];
