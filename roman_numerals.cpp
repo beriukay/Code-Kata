@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 11:48:28 PM AKST
+ * Last Modified : Mon 03 Mar 2014 11:49:35 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -135,6 +135,8 @@ TEST_CASE( "Roman numeral computation", "[numeral]" )
     REQUIRE( numeral(100) == "C" );
     REQUIRE( numeral(199) == "CXCIX" );
     REQUIRE( numeral(333) == "CCCXXXIII" );
+    REQUIRE( numeral(444) == "CDXLIV" );
+
     REQUIRE( numeral(500) == "D" );
     REQUIRE( numeral(555) == "DLV" );
     REQUIRE( numeral(666) == "DCLXVI" );
