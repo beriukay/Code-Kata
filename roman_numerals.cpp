@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Tue 04 Mar 2014 12:39:09 AM AKST
+ * Last Modified : Tue 04 Mar 2014 12:44:06 AM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -33,7 +33,7 @@ string numeral(int num)
 	}
 
 	vector<string> border_roman={"I","X","C"};
-	for (int digit=2; digit>=2; --digit)
+	for (int digit=2; digit>=1; --digit)
 	{
 	    int tens_place = pow(10, digit);
 	    if (num >= 9*tens_place && num < 10*tens_place)
@@ -46,11 +46,6 @@ string numeral(int num)
 		roman_num+=border_roman[digit];
 		num+=tens_place;
 	    }
-	}
-	if (num >= 9*10 && num < 1*100)
-	{
-	    roman_num+="X";
-	    num+=10;
 	}
 	if (num >= 4*10 && num < 5*10)
 	{
