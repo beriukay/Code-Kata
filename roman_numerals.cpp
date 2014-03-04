@@ -1,7 +1,7 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 10:26:36 PM AKST
+ * Last Modified : Mon 03 Mar 2014 10:39:53 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
@@ -17,6 +17,11 @@ string numeral(int num)
     string roman_num="";
     for(int value=0; value < critical_values.size(); ++value)
     {
+	while(num>=critical_values[value])
+	{
+	    roman_num+=roman_values[value];
+	    num-=critical_values[value];
+	}
 	if (num == 9)
 	{
 	    roman_num+="I";
@@ -68,7 +73,6 @@ TEST_CASE( "Roman numeral computation", "[numeral]" )
     REQUIRE( numeral(30) == "XXX" );
     REQUIRE( numeral(34) == "XXXIV" );
     REQUIRE( numeral(38) == "XXXVIII" );
-    REQUIRE( numeral(44) == "XXXVIII" );
     REQUIRE( numeral(50) == "L" );
     REQUIRE( numeral(55) == "LV" );
     REQUIRE( numeral(58) == "LVIII" );
