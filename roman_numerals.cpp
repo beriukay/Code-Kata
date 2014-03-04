@@ -1,18 +1,23 @@
 /* Paul Gentemann
  * File Name : roman_numerals.cpp
  * Creation Date : 02-23-2014
- * Last Modified : Mon 03 Mar 2014 04:06:52 PM AKST
+ * Last Modified : Mon 03 Mar 2014 04:27:00 PM AKST
  */
 
 #define CATCH_CONFIG_MAIN
 #include <string>
 using std::string;
+#include <vector>
 #include "catch.hpp"
 
 string numeral(int num)
 {   
-    int critical_values[]={1,5,10,50,100};
+    std::vector<int> critical_values={1,5,10,50,100};
     string roman_num="";
+    for(int value_index=0; value_index<critical_values.size(); ++value_index)
+    {
+
+    }
     while(num>=10)
     {
 	roman_num+="X";
